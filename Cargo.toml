@@ -1,0 +1,28 @@
+[package]
+name = "rust_test_client"
+version = "0.1.0"
+edition = "2021"
+build = "build.rs"
+
+[dependencies]
+# gRPC runtime with code generation support
+tonic = { version = "0.13.1", features = ["codegen"] }
+# Protobuf support
+prost = "0.13.5"
+# Async runtime
+tokio = { version = "1.0", features = ["full"] }
+# Cryptography and VRF libraries
+ed25519-dalek = { version = "1.0.1", features = ["rand"] }
+curve25519-dalek = "3.2"
+sha2 = "0.10"
+rand = "0.7"
+# Big number support
+num-bigint = "0.4"
+num-rational = "0.4"
+num-traits = "0.2.19"
+# Lazy static initialization
+lazy_static = "1.4"
+
+[build-dependencies]
+# Protobuf code generator for tonic
+tonic-build = "0.13.1"
